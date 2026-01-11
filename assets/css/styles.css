@@ -1,0 +1,267 @@
+:root
+{
+    color-scheme: light dark;
+
+    /* Tema claro */
+    --cor-fundo-claro: #f7f7f7;
+    --cor-fundo-claro-fosco: #E8E8E8;
+    --cor-texto-claro: #2d2d2d;
+    --cor-borda-claro: #dcdcdc;
+    --cor-input-claro: #ffffff;
+    --cor-destaque-claro: #a3c4f3;
+    --cor-botao-claro: #8bb8ff;
+    --cor-textoColado-claro: #00AEFE;
+    --cor-dourado: #ffd700;
+
+    /* Tema escuro */
+    --cor-fundo-escuro: #1e1e1e;
+    --cor-texto-escuro: #e6e6e6;
+    --cor-borda-escuro: #3a3a3a;
+    --cor-input-escuro: #2a2a2a;
+    --cor-destaque-escuro: #6fa3ff;
+    --cor-botao-escuro: #4d7bd9;
+    --cor-textoColado-escuro: #00AEFE;
+    --cor-dourado: #ffd700;
+
+    /* Espaçamentos */
+    --espaco-pequeno: 8px;
+    --espaco-medio: 16px;
+    --espaco-grande: 24px;
+
+    /* Bordas */
+    --raio-borda: 8px;
+
+    /* Tipografia */
+    --fonte-principal: "Segoe UI", Verdana, sans-serif;
+}
+
+/* Reset global */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Body ocupa a tela inteira e centraliza o bloco .tela */
+html,
+body
+{
+    height: 100%;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-claro-fosco);
+}
+
+/* Bloco que contém TUDO (header + main + footer) */
+.tela
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-medio);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Cartõezinhos (header, main, footer) */
+header,
+.container,
+footer
+{
+    padding: 20px;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-claro);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: var(--espaco-medio);
+}
+
+/* Header */
+header h1
+{
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+/* Main */
+.container
+{
+    font-size: larger;
+    text-align: center;
+}
+
+/* Área das opções */
+.opcoes
+{
+    border: 2px double green;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.opcoes img
+{
+    margin: 10px;
+    width: 118px;
+    height: 109px;
+    cursor: pointer;
+}
+
+/* Resultado */
+.resultado
+{
+    margin-top: 20px;
+    font-size: 20px;
+    border: 2px double red;
+    padding: 10px;
+}
+
+.resultado img
+{
+    margin: 10px;
+    width: 118px;
+    height: 109px;
+}
+
+/* Mensagem */
+#mensagem
+{
+    color: blue;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Rodapé / PowerVB */
+footer
+{
+    display: flex;
+}
+
+.powerVB
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.powerVB .ladoEsquerdo,
+.powerVB .ladoDireito
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.powerVB p
+{
+    font-size: smaller;
+    margin: 0 10px;
+}
+
+.powerVB img
+{
+    width: 40px;
+    transform-origin: center;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.2s ease;
+    margin-right: 10px;
+}
+
+.powerVB img:hover
+{
+    transform: scale(5);
+}
+
+/* Caso precise dessas classes depois */
+.borda
+{
+    border: 5px double var(--cor-dourado);
+}
+
+.bordaInicial
+{
+    border: 5px dotted var(--cor-dourado);
+}
+
+.imagem:hover
+{
+    transform: scale(1.05);
+}
+
+/*               */ 
+/* RESPONSIVIDADE */
+/*               */ 
+
+/* 📱 Telas pequenas (até 480px */
+@media (max-width: 480px)
+{
+
+    header h1
+    {
+        font-size: 1.1rem;
+    }
+
+    .opcoes img,
+    .resultado img
+    {
+        width: 85px;
+        height: 78px;
+    }
+
+    .container
+    {
+        font-size: 1rem;
+    }
+
+    .powerVB img
+    {
+        width: 28px;
+    }
+}
+
+/*  📱 Telas Médias (481px a 768px */
+@media (max-width: 768px)
+{
+
+    .tela
+    {
+        max-width: 90%;
+    }
+
+    header h1
+    {
+        font-size: 1.3rem;
+    }
+
+    .opcoes img,
+    .resultado img
+    {
+        width: 100px;
+        height: 90px;
+    }
+}
+
+/* 💻 Telas Grandes (acima de 1024px */
+@media (min-width: 1024px)
+{
+
+    .tela
+    {
+        max-width: 700px;
+    }
+
+    header h1
+    {
+        font-size: 1.6rem;
+    }
+
+    .opcoes img,
+    .resultado img
+    {
+        width: 130px;
+        height: 120px;
+    }
+}
